@@ -1,0 +1,33 @@
+[{
+  "scenario": "Admin Login",
+  "testCase": [{
+    "method": "POST",
+    "model": "admins/login",
+    "withData": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "expect": 200,
+    "storedResult": "adminLoginData"
+  }]
+}, 
+{
+  "scenario": "Access admin form without token",
+  "testCase": [{
+    "method": "GET",
+    "model": "admins/form",
+    "expect": 401
+  }]
+}, {
+  "scenario": "Access admin form with token",
+  "testCase": [{
+    "method": "GET",
+    "model": "admins/form",
+    "withHeader": {
+      "authorization": {
+        "storedResult": "adminLoginData.id" 
+      }
+    },
+    "expect": 200
+  }]
+}]

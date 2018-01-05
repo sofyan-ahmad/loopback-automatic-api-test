@@ -1,5 +1,6 @@
 # Loopback Automatic Api Test
-You can run API testing for loopback only by providing test configs inside directory `./configs/`
+You can run API testing for loopback, just by providing test configs inside directory `./configs/`.
+No more hassle writing long+repetitive scenario and assertion
 
 ## Setup
 - install mocha, supertest, instanbul, and nyc

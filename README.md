@@ -1,7 +1,26 @@
 # Loopback Automatic Api Test
-You can run API testing for loopback only by providing test configs inside directory ./configs/
+You can run API testing for loopback only by providing test configs inside directory `./configs/`
 
-## example test scenario config
+## Setup
+- install mocha, supertest, instanbul, and nyc
+```bash
+npm install -s mocha nyc supertest instanbul
+```
+- clone this repository as sub module to your loopback project root directory
+```bash
+git submodule add https://github.com/sofyanhadia/loopback-automatic-api-test.git
+```
+- inside your package.json add scripts
+```json
+"scripts": {
+    ...
+    "test": "nyc mocha test",
+    "coverage": "NODE_ENV=test nyc --reporter=text mocha"
+  },
+```
+
+
+## Example test scenario config
 ```json
 [{
   "scenario": "Admin Login",
